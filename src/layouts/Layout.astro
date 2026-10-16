@@ -1,0 +1,31 @@
+---
+import "../styles/global.css";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+
+// Props tipadas: así el layout exige un título.
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "Cafetería de especialidad" } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title} | Cofee</title>
+  </head>
+  <body class="min-h-screen bg-stone-50 text-stone-800 flex flex-col">
+    <Header />
+    <main class="flex-1 mx-auto w-full max-w-5xl px-4 py-10">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

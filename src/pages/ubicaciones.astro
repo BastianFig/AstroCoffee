@@ -1,0 +1,12 @@
+---
+import Layout from "../layouts/Layout.astro";
+import LocalCard from "../components/LocalCard.astro";
+import { locales } from "../data/locales";
+---
+
+<Layout title="Ubicaciones" description="Encuentra nuestras sucursales y horarios.">
+  <h1 class="mb-6 text-3xl font-bold text-amber-900">Ubicaciones</h1>
+  <div class="grid gap-6 md:grid-cols-2">
+    {locales.map((l) => <LocalCard local={l} />)}
+  </div>
+</Layout>

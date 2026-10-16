@@ -1,0 +1,29 @@
+---
+import Layout from "../layouts/Layout.astro";
+import ProductCard from "../components/ProductCard.astro";
+import { productos } from "../data/menu";
+
+const destacados = productos.filter((p) => p.destacado);
+---
+
+<Layout title="Inicio">
+  <section class="py-10 text-center">
+    <h1 class="text-4xl font-bold text-amber-900">Café de especialidad, hecho con cariño</h1>
+    <p class="mx-auto mt-4 max-w-xl text-stone-600">
+      Granos seleccionados, pastelería casera y un lugar para quedarte un rato.
+    </p>
+    <a
+      href="/carta"
+      class="mt-6 inline-block rounded bg-amber-900 px-6 py-3 text-white hover:bg-amber-800"
+    >
+      Ver la carta
+    </a>
+  </section>
+
+  <section class="mt-8">
+    <h2 class="mb-4 text-2xl font-semibold">Nuestros favoritos</h2>
+    <div class="grid gap-4 sm:grid-cols-2">
+      {destacados.map((p) => <ProductCard producto={p} />)}
+    </div>
+  </section>
+</Layout>
