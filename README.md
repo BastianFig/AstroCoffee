@@ -55,6 +55,10 @@ src/
 
 > Los datos actuales (productos, direcciones, teléfonos) son de ejemplo.
 
+## Colaboración
+
+Trabajamos con ramas (`dev-bastian`, `dev-vicente`) y Pull Requests hacia `main`. Revisa la guía completa en [CONTRIBUTING.md](CONTRIBUTING.md).
+
 ## Despliegue
 
 `npm run build` genera archivos estáticos en `dist/`, que se pueden publicar en Netlify, Vercel, GitHub Pages o cualquier hosting estático.
